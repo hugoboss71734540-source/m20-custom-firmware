@@ -12,16 +12,15 @@
 #define HORUS_ENABLE 3 // 0 - disabled, 2 - V2, 3 - V3
 
 const static float QRG_FSK4[] = {
-    435100000};       // 4FSK transmitted frequencies array, switched in a loop, add new frequencies (in Hz) after a comma in braces. Commonly used
-                      // frequencies: https://github.com/projecthorus/horusdemodlib/wiki#commonly-used-frequencies
+    434714000};       // 4FSK transmitted frequencies array (Western Europe Horus standard: 434.714 MHz)
 #define FSK4_POWER 30 // RF power setting for horus transmission values 0-63
 
 #define HORUS_V2_PAYLOAD_ID                                                                                                                          \
 	256 // Sonde payload ID 256 - for 4FSKTEST-V2, change this for real flight, refer to
-	    // https://github.com/projecthorus/horusdemodlib/wiki#how-do-i-transmit-it
+	    // https://github.com
 
 #define HORUS_V3_PAYLOAD_CALLSIGN                                                                                                                    \
-	"4FSKTEST-V3" // Sonde payload callsing, 1 to 15 characters : a-z,A-Z,0-9,-, note that the longer it is, the longer the frame will be.
+	"F4JBB-11" // Sonde payload callsing, 1 to 15 characters : a-z,A-Z,0-9,-, note that the longer it is, the longer the frame will be.
 
 #define FSK4_WAIT_TIME 0 // Time in ms of constant TX freq before actual modulation
 
@@ -31,26 +30,26 @@ const static float QRG_FSK4[] = {
 #define APRS_ENABLE 1
 
 const static float QRG_AFSK[] = {
-    435100000};               // AFSK transmitted frequencies array, switched in a loop, add new frequencies (in Hz) after a comma in braces.
+    433800000};               // AFSK transmitted frequencies array (Region 1 UHF APRS: 433.800 MHz)
 #define AFSK_POWER FSK4_POWER // RF power setting AFSK transmission values 0-63
 
-#define APRS_CALLSIGN "NOCALL" // Sonde callsign, max 6 digits, change this for your callsign for real flight
-#define APRS_SSID 11           // Sonde SSID, 11 is "balloons, aircraft, spacecraft, etc", refer to https://www.aprs.org/aprs11/SSIDs.txt
+#define APRS_CALLSIGN "F4JBB"  // Sonde callsign, max 6 digits, change this for your callsign for real flight
+#define APRS_SSID 11           // Sonde SSID, 11 is "balloons, aircraft, spacecraft, etc", refer to https://aprs.org
 
 #define APRS_DESTINATION "APRM20" // Destination adress, characterizing a M20 transmitter, max 6 digits
 #define APRS_DESTINATION_SSID 0   // Default 0 SSID
 
-#define APRS_PATH "WIDE2" // Path, max 6 digits according to https://www.aprs.org/balloons.html
+#define APRS_PATH "WIDE2" // Path, max 6 digits according to https://aprs.org
 #define APRS_PATH_SSID 1  // Path SSID
 
 #define APRS_TIMESTAMP 0 // Disable APRS timestanp sending by default, it has some werid issues on the map.
 
-#define APRS_SYMBOL "/O" // baloon symbol, all symbols: https://www.aprs.org/symbols.html, needs to be /O for showing on Sondehub
+#define APRS_SYMBOL "/O" // baloon symbol, all symbols: https://aprs.org, needs to be /O for showing on Sondehub
 
 #define APRS_COMMENT_TELEMETRY 1 // Telemetry in coment field
 
 #define APRS_COMMENT_TEXT_ENABLE 1
-#define APRS_COMMENT_TEXT "M20 radiosonde test" // Additional text in comment field
+#define APRS_COMMENT_TEXT "F4JBB M20 balloon" // Additional text in comment field
 
 // LED settings
 #define LED_MODE 2                 // 0 - disabled, 1 - flashes when prepairing tx data before transmit, 2 - GPS fix indication
